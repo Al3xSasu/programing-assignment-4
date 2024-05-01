@@ -1,0 +1,40 @@
+Assignment 1: Hacker Speak
+
+
+def hacker_speak(text):
+    # Dictionary for replacements
+    replacements = {
+        'a': '4',
+        'e': '3',
+        'i': '1',
+        'o': '0',
+        's': '5'
+    }
+
+    # Replace each character based on the dictionary
+    for old, new in replacements.items():
+        text = text.replace(old, new)
+
+    return text
+
+# Example usage:
+print(hacker_speak("javascript is cool"))  # "j4v45cr1pt 15 c00l"
+print(hacker_speak("programming is fun"))  # "pr0gr4mm1ng 15 fun"
+print(hacker_speak("become a coder"))  # "b3c0m3 4 c0d3r"
+
+Assignment 2: Credit Card Hide
+
+
+def card_hide(card_number):
+    # Input validation
+    if not card_number.isdigit() or len(card_number) < 12:
+        return "Invalid card number. Ensure it consists only of digits and has at least 12 digits."
+
+    # Mask all but the last four digits
+    masked = '*' * (len(card_number) - 4) + card_number[-4:]
+    return masked
+
+# Example usage:
+print(card_hide("1234123456785678"))  # "************5678"
+print(card_hide("8754456321113213"))  # "************3213"
+print(card_hide("35123413355523"))  # "**********5523"
